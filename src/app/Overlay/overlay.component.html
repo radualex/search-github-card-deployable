@@ -1,0 +1,10 @@
+<div class="container" *ngIf="isShown()">
+  <div
+    class="search-item"
+    (click)="handleOnClick(item)"
+    *ngFor="let item of data; last as isLast"
+  >
+    <div class="text">{{item.toString()}}</div>
+    <hr *ngIf="!isLast" />
+  </div>
+</div>

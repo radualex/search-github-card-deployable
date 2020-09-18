@@ -1,0 +1,35 @@
+.container {
+  position: absolute;
+  min-width: 230px;
+  background: #ffffff;
+  border: 1px solid rgba(15, 15, 43, 0.1);
+  border-radius: 10px;
+  z-index: 1000;
+  margin-top: 10px;
+}
+
+.container .search-item {
+  user-select: none;
+  text-align: center;
+}
+
+.container .search-item:hover {
+  cursor: pointer;
+  mix-blend-mode: normal;
+  opacity: 0.6;
+}
+
+.container .search-item:active {
+  opacity: 0.8;
+}
+
+.container .search-item .text {
+  padding: 10px;
+}
+
+.container .search-item hr {
+  width: 100%;
+  border-top-width: 0px;
+  height: 1px;
+  border-color: rgba(15, 15, 43, 0.1);
+}

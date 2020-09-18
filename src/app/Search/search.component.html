@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="search-bar--wrapper">
+    <i class="material-icons">search</i>
+    <form id="search">
+      <input
+        type="search"
+        placeholder="Search for github repository"
+        (keyup)="handleOnSearch($event)"
+        (search)="handleOnSearch($event)"
+      />
+      <overlay
+        [data]="githubRepos"
+        (closeClicked)="handleOnClickSearch($event)"
+      ></overlay>
+    </form>
+  </div>
+  <hr class="separator" />
+  <span class="title">TRENDING SHORTCUTS</span>
+  <div class="trending-shortcuts--wrapper">
+    <shortcut
+      *ngFor="let shortcut of shortcuts"
+      [icon]="shortcut.icon"
+      [text]="shortcut.text"
+      [color]="shortcut.color"
+    ></shortcut>
+  </div>
+  <span class="title">RECENT SEARCHES</span>
+  <div class="recent-searches--wrapper">
+    <recent-search-item
+      *ngFor="let rsi of recentSearchItems; index as i"
+      [index]="i"
+      [text]="rsi.text"
+      (closeClicked)="handleOnClick($event)"
+    ></recent-search-item>
+  </div>
+</div>

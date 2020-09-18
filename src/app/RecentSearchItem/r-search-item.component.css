@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  padding: 15px;
+}
+
+.container:hover {
+  background: #ebeaf3;
+  border-radius: 5px;
+}
+
+.container .material-icons-outlined {
+  font-size: 22px;
+  margin: 0 5px 0 0;
+  user-select: none;
+}
+
+.container .text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #0f0f2b;
+
+  margin-right: auto;
+}
+
+.container .material-icons {
+  font-size: 24px;
+  mix-blend-mode: normal;
+  opacity: 0.6;
+  user-select: none;
+}
+
+.container .material-icons:hover {
+  cursor: pointer;
+  opacity: 0.4;
+}
+
+.container .material-icons:active {
+  opacity: 0.8;
+}

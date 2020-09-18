@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  align-items: center;
+  padding: 9px 15px 9px 13px;
+  background: #f9effa;
+  border-radius: 5px;
+  height: 20px;
+  width: fit-content;
+  user-select: none;
+}
+
+.container:hover {
+  cursor: pointer;
+}
+
+.container:active {
+  mix-blend-mode: normal;
+  opacity: 0.6;
+}
+
+.container .material-icons-outlined {
+  font-size: 20px;
+  margin: 0 8px 0 0;
+}
+
+.container .text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #202842;
+}
