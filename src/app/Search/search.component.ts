@@ -1,30 +1,30 @@
-import { Component } from "@angular/core";
-import { SearchService } from "../../app/Services/search.service";
-import { Subject } from "rxjs";
-import { GithubRepo } from "src/models/githubRepo.dto";
+import { Component } from '@angular/core';
+import { SearchService } from '../../app/Services/search.service';
+import { Subject } from 'rxjs';
+import { GithubRepo } from 'src/models/githubRepo.dto';
 
 @Component({
-  selector: "search-card",
-  templateUrl: "./search.component.html",
-  styleUrls: ["./search.component.css"],
+  selector: 'search-card',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css'],
 })
 export class SearchComponent {
   shortcuts = [
     {
-      icon: "message",
-      text: "Messages",
-      color: "#F9EFFA"
+      icon: 'message',
+      text: 'Messages',
+      color: '#F9EFFA',
     },
     {
-      icon: "attachment",
-      text: "Attachments",
-      color: "#E6F6F2"
+      icon: 'attachment',
+      text: 'Attachments',
+      color: '#E6F6F2',
     },
     {
-      icon: "people",
-      text: "People",
-      color: "#F4F3FD"
-    }
+      icon: 'people',
+      text: 'People',
+      color: '#F4F3FD',
+    },
   ];
 
   searchTerm = new Subject<string>();
@@ -39,24 +39,16 @@ export class SearchComponent {
 
   _setRecentSearchItem(term: string) {
     const length: number = this.recentSearchItems.length;
-    if (length !== 0) {
-      const lastItem = this.recentSearchItems[0];
-      const termIsValid: boolean = lastItem.text.length > 1 && term.length > 1;
-      if (termIsValid) {
-        if (length === 3) {
-          this.recentSearchItems.shift();
-          this._pushItemToArray(term);
-        } else {
-          this._pushItemToArray(term);
-        }
-      }
+    if (length === 3) {
+      this.recentSearchItems.pop();
+      this._pushItemToArray(term);
     } else {
       this._pushItemToArray(term);
     }
   }
 
   _pushItemToArray(term: string) {
-    this.recentSearchItems.push({ text: term });
+    this.recentSearchItems.splice(0, 0, { text: term });
   }
 
   handleOnSearch(ev: KeyboardEvent) {
